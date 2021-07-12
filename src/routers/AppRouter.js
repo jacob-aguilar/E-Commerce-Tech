@@ -12,6 +12,7 @@ import { firebase } from '../firebase/firebase-config';
 import { useDispatch } from 'react-redux';
 import { login } from '../actions/auth';
 import { PrivateRoute } from './PrivateRoute';
+import {LoadingPage} from '../components/ui/LoadingPage'
 
 export const AppRouter = () => {
 
@@ -44,9 +45,7 @@ export const AppRouter = () => {
 
   if ( checking ) {
       return (
-        <div class="spinner-grow text-primary" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
+        <LoadingPage/>
       )
 
       }
