@@ -2,18 +2,22 @@ import React from 'react'
 import { Link, NavLink, useHistory} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { startLogout } from '../../actions/auth';
+import { db} from '../../firebase/firebase-config'
 
 
 export const Navbar = () => {
 
     const dispatch = useDispatch();
-// const { name } = useSelector( state => state.auth );
+    const { name } = useSelector( state => state.auth );
 
     const hanleLogout = () => {
     dispatch( startLogout() )
 }
 
-  return (
+    var citiesRef = db.collection("computers");
+    console.log(citiesRef);
+
+    return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             
             <Link 
@@ -47,18 +51,21 @@ export const Navbar = () => {
                             <div className="ml-1"></div>
                          
                      </form>
-                     <button type="button" class="btn btn-outline-primary">
+                     {/* <button type="button" class="btn btn-outline-primary">
                      <Link 
                       to="/auth/login"
                     >
                       Sing in
                     </Link>
-                    </button>
-                    <button type="button" class="btn btn-outline-primary" onClick={hanleLogout}><Link 
+                    </button> */}
+                    {/* <button type="button" class="btn btn-outline-primary" onClick={hanleLogout}><Link 
                       to="/auth/login"
                     >
                       Logout
-                    </Link></button>
+                    </Link></button> */}
+                    <div className="div-name">
+                    Hola, {name}
+                    </div>
                     
                 </ul>
             </div>

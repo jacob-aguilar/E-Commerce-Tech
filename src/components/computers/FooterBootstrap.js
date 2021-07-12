@@ -11,8 +11,9 @@ import Slider from "react-slick";
  
 
 export const FooterBootstrap = () => {
-
-
+    const today = new Date();
+    const year = today.getUTCFullYear();
+    
     return (
       
       <footer id="footer">
@@ -70,7 +71,7 @@ export const FooterBootstrap = () => {
           
               <div className=" col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white" >
               <hr/>
-              <p className="h6">© All right Reversed.<a className="text-green ml-2" href="http://www.yourappland.com/es/" target="_blank">Appland</a></p>
+              <p className="h6">© All right Reversed.<a className="text-green ml-2" href="http://www.yourappland.com/es/" target="_blank">Appland {year} </a></p>
               </div>
     
      
