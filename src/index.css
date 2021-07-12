@@ -76,6 +76,79 @@ section .section-title {
 }
 
 
+/* Footer transparent */
+
+
+.footer-transparent {
+  background: #e9e9e9 !important;
+}
+
+.footer-transparent h5{
+padding-left: 10px;
+  border-left: 3px solid #0275d8;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  color:#0275d8;
+}
+.footer-transparent a {
+  color: #0275d8;
+  text-decoration: none !important;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+.footer-transparent ul.social li{
+padding: 3px 0;
+}
+.footer-transparent ul.social li a i {
+  margin-right: 5px;
+font-size:25px;
+-webkit-transition: .5s all ease;
+-moz-transition: .5s all ease;
+transition: .5s all ease;
+}
+.footer-transparent ul.social li:hover a i {
+font-size:30px;
+margin-top:-10px;
+}
+.footer-transparent ul.social li a,
+.footer ul.quick-links li a{
+color:#0275d8;
+}
+.footer-transparent ul.social li a:hover{
+color:#0275d8;
+}
+
+.p-footer{
+  color:#0275d8;
+  }
+
+.footer-transparent ul.quick-links li{
+padding: 3px 0;
+-webkit-transition: .5s all ease;
+-moz-transition: .5s all ease;
+transition: .5s all ease;
+}
+.footer-transparent ul.quick-links li:hover{
+padding: 3px 0;
+margin-left:5px;
+font-weight:700;
+}
+.footer-transparent ul.quick-links li a i{
+margin-right: 5px;
+}
+.footer-transparent ul.quick-links li:hover a i {
+  font-weight: 700;
+}
+
+@media (max-width:767px){
+  .footer-transparent h5 {
+  padding-left: 0;
+  border-left: transparent;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+}
+}
+
 /*Carousel bootstrap*/
 
 .slider-item{

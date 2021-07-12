@@ -8,6 +8,7 @@ import { DetailReviewScreen } from '../components/detail-review/DetailReviewScre
 import { useDispatch } from 'react-redux';
 import { ComputersScreen } from '../components/computers/ComputersScreen'
 import { FooterBootstrap } from '../components/computers/FooterBootstrap'
+import { HomeScreen } from '../components/ui/HomeScreen'
 
 export const DashboardRoutes = () => {
     return (
@@ -17,6 +18,7 @@ export const DashboardRoutes = () => {
             <Switch>
                 {/* <Route exact path ="/computers" component= { ComputerScreen }/> */}
                 <Route exact path ="/detail/:detailId" component= { DetailScreen }/>
+                <Route exact path ="/" component= { HomeScreen }/>
                 <Route exact path="/computers" component= { ComputersScreen } />
                 <Route path="/detail-review/:id" component= { DetailReviewScreen } />
                 <Redirect to="/"/>
