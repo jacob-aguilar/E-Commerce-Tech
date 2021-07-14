@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink, useHistory} from 'react-router-dom'
+import { Link, NavLink} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { startLogout } from '../../actions/auth';
 import { db} from '../../firebase/firebase-config'
@@ -14,7 +14,7 @@ export const Navbar = () => {
     dispatch( startLogout() )
 }
 
-    var citiesRef = db.collection("computers");
+    const citiesRef = db.collection("computers");
     console.log(citiesRef);
 
     return (
@@ -37,6 +37,13 @@ export const Navbar = () => {
                         to="/computers"
                     >Computers
                     </NavLink>
+                    <NavLink
+                        activeClassName="active"
+                        className="nav-item nav-link"
+                        exact
+                        to="/phones"
+                    >Phones
+                    </NavLink>
                 
                 </div>
             </div>
@@ -44,13 +51,13 @@ export const Navbar = () => {
             <div className="navbar-collapse  w-12 order-3 dual-collapse2">
                 <ul className="navbar-nav ml-auto">
 
-                    <form className="form-inline my-2 my-lg-0" >
-                         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                    {/* <form className="form-inline my-2 my-lg-0" >
+                         <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
                          <button className="btn btn-primary" type="submit">Search</button>
 
                             <div className="ml-1"></div>
                          
-                     </form>
+                     </form> */}
                      {/* <button type="button" class="btn btn-outline-primary">
                      <Link 
                       to="/auth/login"

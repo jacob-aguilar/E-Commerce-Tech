@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { FooterTransparent } from './FooterTransparent'
 
 export const CarouselHome = () => {
     return (
