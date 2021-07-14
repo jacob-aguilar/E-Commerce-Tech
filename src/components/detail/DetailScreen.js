@@ -1,10 +1,18 @@
 import React from 'react';
 import ReactStars from 'react-rating-stars-component';
-import { Link } from 'react-router-dom';
+import { Link, history } from 'react-router-dom';
 
 
 
-export const DetailScreen = () => {
+export const DetailScreen = ({history}) => {
+
+  console.log(history);
+
+  const handleReturn = () => {
+    history.goBack();
+}
+
+
     return (
         <div class="container">
           <div class="row">
@@ -34,7 +42,7 @@ export const DetailScreen = () => {
               <p><b>Category:</b> Tecnology</p>
               <p><b>Create:</b> Friday 02</p>
               <p><b>Tag:</b> computadora</p>
-              <p><button type="button" class="btn btn-primary">Return</button></p>
+              <p><button type="button" class="btn btn-primary" onClick={handleReturn} >Return</button></p>
             </div>
           </div>
         </div>
