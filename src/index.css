@@ -709,6 +709,10 @@ margin-right: 5px;
     margin-top: 15%;
   }
 
+  .margin-left{
+   margin-left: 3%;
+  }
+
 
   /* loader */
   .loader {
@@ -732,4 +736,8 @@ margin-right: 5px;
     font-weight: bold;
     margin-left: 5px;
     
+  }
+  .container-search{
+    width: 875px;
+    margin-inline: 12%;
   }
