@@ -6,7 +6,7 @@ import { activeNote } from '../../actions/notes';
 
 
 
-export const ComputersCard = ({
+export const PhonesCard = ({
   id,
   name,
   img,
