@@ -7,7 +7,8 @@ import { useForm } from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, startComment } from '../../actions/auth';
 import Swal from 'sweetalert2';
-import { Link  } from 'react-router-dom'
+import {LoadingPage} from '../../components/ui/LoadingPage'
+
 
 
 export const Commentary = () => {
@@ -30,6 +31,7 @@ export const Commentary = () => {
     const getComment = async () => {
 
         const comentariosSnap = await db.collection(`comments`).where('id','==',`${id}`).get();
+        
         const comentarios = [];
 
         comentariosSnap.forEach(snapHijo => {
@@ -40,8 +42,25 @@ export const Commentary = () => {
 
     }
 
+
+    const [datas, setDatas] = useState([]);
+    const getDescription = async () => {
+
+        const descriptionSnap = await db.collection(`computers`).where('id','==',`${id}`).get();
+        
+        const description = [];
+
+        descriptionSnap.forEach(snapHijo => {
+            description.push({ ...snapHijo.data(), id: snapHijo.id })
+        });
+        console.log(description)
+        setDatas(description)
+
+    }
+
     useEffect(() => {
         getComment();
+        getDescription();
     }, []);
 
 
@@ -73,11 +92,7 @@ export const Commentary = () => {
 
     if (cheking) {
         return (
-          <div className="text-center">
-            <div className="spinner-border  m-5" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
-          </div>
+            <LoadingPage/>
         )
       }
 
@@ -148,11 +163,11 @@ export const Commentary = () => {
 				    	<a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="true">Reviews (0)</a>
 				  	</li>
 				</ul>
-
+                {datas.map((data) => (
                 <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-				  		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+				  	{data.longdescription}
 				</div>
-
+                ))}
 				<div class="tab-content" id="myTabContent">
 				  	
 				  	
@@ -189,7 +204,7 @@ export const Commentary = () => {
                                         autoComplete="off"
                                         onChange={handleInputChange}
                                         type="text"
-                                        className="rating-label"                                   
+                                        className="form-control col-3 mr-sm-2 rating-label"                                   
                                         value={calificacionUsuario}
                                         placeholder="1 to 5" />
 					        		</div>

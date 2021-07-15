@@ -31,10 +31,6 @@ export const PhonesCard = ({
 }
 
 
-  const handlerWatch = () => {
-   console.log("click");
-
-}
 
   const ratingChanged = (newRating) => {
     console.log(newRating);
@@ -47,11 +43,11 @@ export const PhonesCard = ({
     <div className="col-md-3 col-sm-3 col-xs-12" 
     onClick={ handleEntryClick }
     >
-      <div class="container-card container-space-card" id={id}>
+      <div class="container-card container-space-card" onClick={ handleEntryClick } id={id}>
                 <div class="col-md-3 col-sm-3 col-xs-12">
                   <div class="slider-item">
                     <div class="slider-image">
-                      <Link to={`/detail-review/${id}`}>
+                      <Link to={`/detail-review-phones/${id}`}>
                       <img src={img}  class="img-responsive" alt="a" />
                       </Link>
                     </div>
@@ -64,7 +60,7 @@ export const PhonesCard = ({
                       </div>
                     <div class="cart-section">
                       <div class="row">
-                        <div className="ml-3">
+                        <div className="col-md-6 col-sm-12 col-xs-6">
                             <ReactStars
                               count={calification}
                               onChange={ratingChanged}
@@ -74,7 +70,9 @@ export const PhonesCard = ({
                             />
                         </div>
                           <div class="col-md-6 col-sm-12 col-xs-6">
-                          <a href="#" onClick={handlerWatch} class="AddCart btn btn-info"><i class="fa fa-shopping-cart"  aria-hidden="true"></i> Watch now</a>
+                          <Link to={`/detail-review-phones/${id}`}>
+                          <a href="#" class="AddCart btn btn-info"><i class="fa fa-external-link"  aria-hidden="true"></i> Watch now</a>
+                          </Link>
                           </div>
                         </div>
                       </div>
