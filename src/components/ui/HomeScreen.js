@@ -2,10 +2,12 @@ import React from 'react'
 import { CarouselHome } from './CarouselHome'
 import { FooterTransparent } from './FooterTransparent'
 
-export const HomeScreen = () => {
+export const HomeScreen = ({history}) => {
+    console.log(history);
+
     return (
         <div>
-            <CarouselHome/>
+            <CarouselHome history={history}/>
             <FooterTransparent/>
         </div>
     )

@@ -663,7 +663,7 @@ margin-right: 5px;
 
 
   .container-card{
-    width: 1000px;
+    width: 1060px;
     height: max-content;
     margin-left: 5%;
     display: flex;
@@ -738,6 +738,11 @@ margin-right: 5px;
     
   }
   .container-search{
-    width: 875px;
+    width: 945px;
     margin-inline: 12%;
+  }
+  
+  .text-overflow{
+    grid-row: 1;
+    text-overflow: ellipsis;
   }
