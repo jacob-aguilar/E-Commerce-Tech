@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
 import { db } from '../../firebase/firebase-config'
 
-export const DetailScreen = ({history}) => {
+export const DetailPhoneScreen = ({history}) => {
 
   console.log(history);
 
@@ -17,19 +17,20 @@ export const DetailScreen = ({history}) => {
   const { id } = useParams();
   const comments = useSelector(state => state.comments);
   const { name } = useSelector(state => state.auth);
-  // console.log(name);
+  console.log(id);
 
   const [formValues, handleInputChange] = useForm(comments);
     const { description, calificacionUsuario } = formValues;
-  // console.log(formValues);
+  console.log(formValues);
 
-  const [data, setData] = useState([]);
+const [data, setData] = useState([]);
+  
   const getDetails = async () => {
 
-    const detailSnaap = await db.collection(`computers`).where('id','==',`${id}`).get();
+    const detailPhoneSnap = await db.collection(`phones`).where('id','==',`${id}`).get();
     const detail = [];
 
-    detailSnaap.forEach(snapHijo => {
+    detailPhoneSnap.forEach(snapHijo => {
         detail.push({ ...snapHijo.data(), id: snapHijo.id })
     });
     console.log(detail)
@@ -40,26 +41,24 @@ export const DetailScreen = ({history}) => {
     useEffect(() => {
       getDetails();
     }, []);
-    
-    const newTab = () => {
-        window.open(data.img);
-    }
+
 
     return (
       <>
+
+      
       {data.map((data) => (
       <>
         <div class="container">
           <div class="row">
             <div class="col-lg-6 col-sm-12 col-12">      
               <div class="carousel-item active">
-              <img src={data.img} onClick={newTab}/>
+                <img src={data.img}/>
               </div>
             </div>
             <div class="col-lg-6 col-sm-12 col-12">
                <p class="barangbaru text-center"></p>
-          
-             <div >
+                 <div >
                 <div>
                    <p 
                     className="margin-top">
