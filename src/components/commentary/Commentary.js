@@ -133,6 +133,8 @@ export const Commentary = () => {
             Swal.fire({
                 icon: 'error',
                 title: 'Algo salió mal',
+                showConfirmButton: false,
+                timer: 3000,
                 text: 'Inicia sesión para agregar un comentario.',
               });   
         } 
@@ -152,6 +154,18 @@ export const Commentary = () => {
           })
     }
 
+    if (description > 100){
+        Swal.fire({
+               icon: 'info',
+               title: 'No se permiten mas de 100 caracteres',
+               showClass: {
+                 popup: 'animate__animated animate__fadeInDown'
+               },
+               hideClass: {
+                 popup: 'animate__animated animate__fadeOutUp'
+               }
+             })
+       }
 
     return (
         <div class="product-info-tabs container-space">
@@ -222,13 +236,13 @@ export const Commentary = () => {
                         
                             {data.map((data) => (
                                 <>
-                                <div className="col-12 h-100">
+                                <div className="col-12">
                                     <ul className="list-group-item list-group-item border-comment">
                                         
                                         <div className="card-body-co">
 
                                         <div 
-                                            className="col-md-1">
+                                            className="col-md-2">
                                                 <ReactStars
                                                     count={data.calificacionUsuario}
                                                     onChange={ratingChanged}
@@ -238,13 +252,13 @@ export const Commentary = () => {
                                                 />
                                             </div>
 
-                                        <div className="col-md-8"> 
+                                        <div className="col-md-7"> 
                                             {data.description}
                                             </div>
 
                                         <div className="col-md-3">{data.name}</div>
                                             
-                                            
+                                          
                                         </div>
 
                                         </ul>
