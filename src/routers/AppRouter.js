@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux';
 import { login } from '../actions/auth';
 import { PrivateRoute } from './PrivateRoute';
 import {LoadingPage} from '../components/ui/LoadingPage'
+import { HomeScreen } from '../components/ui/HomeScreen';
 
 export const AppRouter = () => {
 
@@ -59,9 +60,9 @@ export const AppRouter = () => {
             <Route path= "/" component ={ DashboardRoutes }/>
             <PrivateRoute
               exact
-              path="/auth/register"
+              path="/auth/login"
               isAuthenticated={isLoggedIn}
-              component={ ComputersScreen }
+              component={ HomeScreen }
             >   
             </PrivateRoute>
          

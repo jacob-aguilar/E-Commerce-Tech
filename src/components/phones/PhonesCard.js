@@ -71,7 +71,7 @@ export const PhonesCard = ({
                         </div>
                           <div class="col-md-6 col-sm-12 col-xs-6">
                           <Link to={`/detail-review-phones/${id}`}>
-                          <a href="#" class="AddCart btn btn-info"><i class="fa fa-external-link"  aria-hidden="true"></i> Watch now</a>
+                          <a href="#" class="AddCart btn btn-info border-i"><i class="fa fa-external-link"  aria-hidden="true"></i> Watch now</a>
                           </Link>
                           </div>
                         </div>

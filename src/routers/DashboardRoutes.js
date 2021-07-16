@@ -11,10 +11,11 @@ import { HomeScreen } from '../components/ui/HomeScreen'
 import { PhoneScreen } from '../components/phones/PhoneScreen'
 import { DetailReviewPhone } from '../components/detail-review/DetailReviewPhone'
 
-export const DashboardRoutes = () => {
+export const DashboardRoutes = ({history}) => {
+    console.log(history);
     return (
         <>
-          <Navbar/>  
+          <Navbar history={history}/>  
         <div>
             <Switch>
                 {/* <Route exact path ="/computers" component= { ComputerScreen }/> */}

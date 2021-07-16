@@ -5,14 +5,21 @@ import { startLogout } from '../../actions/auth';
 import { db} from '../../firebase/firebase-config'
 
 
-export const Navbar = () => {
+export const Navbar = ({history}) => {
 
     const dispatch = useDispatch();
-    const { name } = useSelector( state => state.auth );
+    const auth = useSelector( state => state.auth );
+    
+
+    console.log(history);
 
     const hanleLogout = () => {
     dispatch( startLogout() )
-}
+    }
+
+    const handlelogin = () => {
+        history.push('/auth/login/');
+        }
 
     const citiesRef = db.collection("computers");
     console.log(citiesRef);
@@ -65,14 +72,28 @@ export const Navbar = () => {
                       Sing in
                     </Link>
                     </button> */}
-                    {/* <button type="button" class="btn btn-outline-primary" onClick={hanleLogout}><Link 
-                      to="/auth/login"
-                    >
-                      Logout
-                    </Link></button> */}
-                    <div className="div-name">
-                    Hola, {name}
-                    </div>
+   
+                    {
+                     auth.uid
+                    ? <div className="div-name">Hello, {auth.name}</div>
+                    : <div className="div-name">Hey, join us</div>
+                    }
+                    {
+                    auth.uid
+                    ?  <a href="#" class="AddCart btn btn-info border-i" onClick={hanleLogout}>
+                        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+                        <Link 
+                        to="/auth/login"
+                        >
+                        </Link></a>
+                    : <a href="#" class="AddCart btn btn-info border-i" onClick={handlelogin}>
+                        <i class="fa fa-user" aria-hidden="true"></i> Sign in
+                        <Link 
+                        to="/auth/login"
+                        >
+                        </Link>
+                    </a>
+                    }
                     
                 </ul>
             </div>

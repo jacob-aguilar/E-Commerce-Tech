@@ -702,7 +702,7 @@ margin-right: 5px;
 
   .border-comment{
     border-radius: 3%;
-    height: 20px;
+    height: 80px;
   }
 
   .margin-top{
@@ -730,7 +730,8 @@ margin-right: 5px;
 
   .div-name{
     justify-content: center;
-    margin-top: 1.5%;
+    margin-top: 3%;
+    margin-right: 5px;
     color: #0275d8;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -746,3 +747,7 @@ margin-right: 5px;
     grid-row: 1;
     text-overflow: ellipsis;
   }
+
+.border-i{
+  border-radius: 7%;
+}
