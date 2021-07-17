@@ -32,9 +32,11 @@ export const startFacebookLogin = () => {
     return ( dispatch ) => {
 
         firebase.auth().signInWithPopup( facebookAuthProvider )
-            .then( userCred => {
-                console.log(userCred);
-            })
+            .then( user => {
+                dispatch(
+                    login( user.uid, user.displayName )
+                )
+            }).catch((error) => alert(error.message));
     }
 }
 
