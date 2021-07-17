@@ -81,8 +81,8 @@ const [data, setData] = useState([]);
           
               <p>{data.shortdescription}</p>  
               <p><b>Category:</b>{data.category}</p>
-              <p><b>Create:</b>{data.create}</p>
-              <p><b>Tag:</b>{ createDate.format('dddd, MMMM Do YYYY')} </p>
+              <p><b>Create:</b>{ createDate.format('dddd, MMMM Do YYYY')}</p>
+              <p><b>Tag:</b>{ data.words} </p>
               <p><button type="button" class="btn btn-primary" onClick={handleReturn} >Return</button></p>
             </div>
           </div>
