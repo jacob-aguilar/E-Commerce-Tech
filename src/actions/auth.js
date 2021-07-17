@@ -69,7 +69,8 @@ export const startComment = ({ description, calificacionUsuario }, name, id, ) =
             description: description,
             name: name,
             id: id,
-            calificacionUsuario: calificacionUsuario
+            calificacionUsuario: calificacionUsuario,
+            date: new Date().getTime()
         }
 
         const doc = await db.collection(`comments`).add(newComment);

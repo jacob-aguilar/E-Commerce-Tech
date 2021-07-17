@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
 import { db } from '../../firebase/firebase-config'
+import moment from 'moment';
 
 export const DetailPhoneScreen = ({history}) => {
 
@@ -38,6 +39,9 @@ const [data, setData] = useState([]);
 
 }
 
+    const createDate = moment(data.date);
+    console.log(createDate)
+
     useEffect(() => {
       getDetails();
     }, []);
@@ -52,8 +56,10 @@ const [data, setData] = useState([]);
         <div class="container">
           <div class="row">
             <div class="col-lg-6 col-sm-12 col-12">      
-              <div class="carousel-item active">
+              <div class="product">
+              <div class="gallery">
                 <img src={data.img}/>
+                </div>
               </div>
             </div>
             <div class="col-lg-6 col-sm-12 col-12">
@@ -76,7 +82,7 @@ const [data, setData] = useState([]);
               <p>{data.shortdescription}</p>  
               <p><b>Category:</b>{data.category}</p>
               <p><b>Create:</b>{data.create}</p>
-              <p><b>Tag:</b>{data.words}</p>
+              <p><b>Tag:</b>{ createDate.format('dddd, MMMM Do YYYY')} </p>
               <p><button type="button" class="btn btn-primary" onClick={handleReturn} >Return</button></p>
             </div>
           </div>

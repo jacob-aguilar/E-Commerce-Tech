@@ -69,11 +69,27 @@ export const ComputersScreen = ({ history }) => {
 
 
     return (
-    <>                   
-                <SearchScreen
-                 searchQuery={searchQuery}
-                 setSearchQuery={setSearchQuery}
-                />
+    <>     
+            <SearchScreen
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            />
+
+            { 
+            (searchQuery ==='') 
+            && 
+            <div>
+            
+            </div>
+            }
+
+            { 
+             (searchQuery !=='' && filteredComputers.length === 0 ) 
+             && 
+             <div className="alert alert-danger container-search container-darger">
+              No results, try again.
+             </div>
+            }
 
         <div class="container">        
             { 

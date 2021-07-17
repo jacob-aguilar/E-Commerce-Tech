@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, startComment } from '../../actions/auth';
 import Swal from 'sweetalert2';
 import {LoadingPage} from '../../components/ui/LoadingPage'
+import moment from 'moment';
 
 
 
@@ -42,6 +43,8 @@ export const Commentary = () => {
 
     }
 
+    const commentDate = moment(data.date);
+    console.log(commentDate)
 
     const [datas, setDatas] = useState([]);
     const getDescription = async () => {
@@ -189,7 +192,7 @@ export const Commentary = () => {
 				  		<div class="pd-wrap review-heading">REVIEWS</div>
 				  		
 				  		<form class="review-form label-your">
-		        			<div class="form-group">
+		        			{/* <div class="form-group">
 			        			<label className="label-your rating-label">Your rating</label>
 			        			<div class="reviews-counter rating-label">
 									<div class="rate">
@@ -200,7 +203,7 @@ export const Commentary = () => {
                                     </ReactStars>
 									</div>
 								</div>
-							</div>
+							</div> */}
 		        			<div class="form-group col-12">
 			        			<label>Your message</label>
 			        			<textarea name="description"
@@ -252,11 +255,15 @@ export const Commentary = () => {
                                                 />
                                             </div>
 
-                                        <div className="col-md-7"> 
+                                        <div className="col-md-6"> 
                                             {data.description}
                                             </div>
+                                        
+                                            <div className="col-md-2"> 
+                                            { commentDate.format('dddd, MMMM Do YYYY') }
+                                            </div>
 
-                                        <div className="col-md-3">{data.name}</div>
+                                        <div className="col-md-2">{data.name}</div>
                                             
                                           
                                         </div>

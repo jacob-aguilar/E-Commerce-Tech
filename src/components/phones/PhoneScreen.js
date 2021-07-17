@@ -75,6 +75,22 @@ export const PhoneScreen = ({ history }) => {
              setSearchQuery={setSearchQuery}
             />
 
+{ 
+            (searchQuery ==='') 
+            && 
+            <div>
+            
+            </div>
+            }
+
+            { 
+             (searchQuery !=='' && filteredPhones.length === 0 ) 
+             && 
+             <div className="alert alert-danger container-search container-darger">
+              No results, try again.
+             </div>
+            }
+
         <div class="container">        
             { 
                 filteredPhones.map(libro => (
