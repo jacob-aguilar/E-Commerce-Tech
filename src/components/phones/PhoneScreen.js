@@ -60,7 +60,14 @@ export const PhoneScreen = ({ history }) => {
 
     return data.filter((data) => {
         const dataName = data.name.toLowerCase();
-        return dataName.includes(query);
+        const dataCategory = data.category.toLowerCase();
+        const dataWord = data.words.toLowerCase();
+        return (
+            dataName.includes(query) ||
+            dataCategory.includes(query) ||
+            dataWord.includes(query)    
+
+        );
     });
     };
   

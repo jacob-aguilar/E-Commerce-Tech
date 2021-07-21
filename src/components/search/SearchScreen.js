@@ -10,7 +10,8 @@ export const SearchScreen = ({ searchQuery, setSearchQuery }) => {
                             className="form-control col-3 mr-sm-2"
                             name="searchText"
                             autoComplete="off"
-                            placeholder="Search" 
+                            placeholder="Search"
+                            maxLength="25" 
                             aria-label="Search"
                             value={ searchQuery }
                             onInput={e => setSearchQuery(e.target.value)}

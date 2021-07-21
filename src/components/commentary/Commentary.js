@@ -157,10 +157,23 @@ export const Commentary = () => {
           })
     }
 
-    if (description > 100){
+    if (description < 3){
         Swal.fire({
                icon: 'info',
-               title: 'No se permiten mas de 100 caracteres',
+               title: 'Tienes que añadir más de una palabra',
+               showClass: {
+                 popup: 'animate__animated animate__fadeInDown'
+               },
+               hideClass: {
+                 popup: 'animate__animated animate__fadeOutUp'
+               }
+             })
+       }
+
+       if (description >= 255){
+        Swal.fire({
+               icon: 'info',
+               title: 'No se permiten más caracteres',
                showClass: {
                  popup: 'animate__animated animate__fadeInDown'
                },
@@ -210,8 +223,10 @@ export const Commentary = () => {
                                     onChange={handleInputChange}
                                     autoComplete="off"
                                     type="text"
+                                    maxLength="255"
+                                    minLength="3"
                                     className="form-control"
-                                    rows="6"
+                                    rows="4"
                                     value={description}/>
 			        		</div>
 			        		<div class="row">
