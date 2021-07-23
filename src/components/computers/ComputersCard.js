@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { activeNote } from '../../actions/notes';
 
 
@@ -18,6 +18,8 @@ export const ComputersCard = ({
   create,
 }) => {
 
+  const { comentarios } = useSelector((state) => state.comentarios);
+    console.log(comentarios);
 
   const dispatch = useDispatch();
   const handleEntryClick = () => {
