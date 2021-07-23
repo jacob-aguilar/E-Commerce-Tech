@@ -1,7 +1,7 @@
 //Donde se detalla el producto al darle clicks.
 import React, { useEffect, useState } from 'react'
-import { Commentary } from '../commentary/Commentary';
 import {DetailScreen} from '../detail/DetailScreen'
+import { Commentary } from './Commentary';
 
 
 export const DetailReviewScreen = ({history}) => {
@@ -13,8 +13,7 @@ export const DetailReviewScreen = ({history}) => {
       <div>
 
       <DetailScreen history={history}/>
-      <Commentary/>
-      
+      <Commentary history={history}/>
       </div>   
   )
 }

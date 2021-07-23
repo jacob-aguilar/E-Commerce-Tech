@@ -10,21 +10,25 @@ import moment from 'moment';
 export const DetailPhoneScreen = ({history}) => {
 
   console.log(history);
+  let { comentarios } = useSelector((state) => state.comentarios);
+    console.log(comentarios);
 
   const handleReturn = () => {
     history.goBack();
 }
 
   const { id } = useParams();
+  console.log(id);
   const comments = useSelector(state => state.comments);
   const { name } = useSelector(state => state.auth);
-  console.log(id);
+  const state = useSelector(state => state);
+  console.log(state);
 
   const [formValues, handleInputChange] = useForm(comments);
     const { description, calificacionUsuario } = formValues;
   console.log(formValues);
 
-const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
   
   const getDetails = async () => {
 
@@ -37,7 +41,7 @@ const [data, setData] = useState([]);
     console.log(detail)
     setData(detail)
 
-}
+    }
 
     const createDate = moment(data.date);
     console.log(createDate)
@@ -46,6 +50,28 @@ const [data, setData] = useState([]);
       getDetails();
     }, []);
 
+        // Return calification
+        comentarios = comentarios.filter(phones => phones.idComment === id);
+        let calificacion = 0;
+    
+        for (let i = 0; i < comentarios.length; i++) {
+          calificacion = calificacion + comentarios[i].calificacion
+        }
+        if (calificacion !== 0){
+          calificacion = Math.round(calificacion / comentarios.length);
+        }
+    
+        let rowsCalification = [];
+        for (let i = 0; i < calificacion; i++) {
+          rowsCalification.push(
+            <img key={i} src={`/icons/star-filled.svg`} alt="" />
+          );
+        }
+        for (let i = calificacion; i < 5; i++) {
+          rowsCalification.push(
+            <img key={i} src={`/icons/star-empty.svg`} alt="" />
+          );
+        }
 
     return (
       <>
@@ -69,19 +95,17 @@ const [data, setData] = useState([]);
                    <p 
                     className="margin-top">
                     <h2>{data.name}</h2>
-                    <ReactStars
-                    count={data.calification}
-                     size={20}
-                     color={"#ffbf00"}
-                     edit={false}
-                     />
+                      <div>
+                      {rowsCalification}
+                      </div>
                     </p>                         
                  </div>
              </div>
           
               <p>{data.shortdescription}</p>  
               <p><b>Category:</b>{data.category}</p>
-              <p><b>Last update:</b>{ createDate.calendar('dd')}</p>
+              <p><b>Last update:</b>{ createDate.add(-3, "day")
+                  .format("DD-MM-YYYY")}</p>
               <p><b>Tag:</b>{ data.words} </p>
               <p><button type="button" class="btn btn-primary" onClick={handleReturn} >Return</button></p>
             </div>
