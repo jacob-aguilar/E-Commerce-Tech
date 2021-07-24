@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { activeNote } from '../../actions/notes';
 
 
@@ -12,32 +12,47 @@ export const PhonesCard = ({
   img,
   longdescription,
   shortdescription,
-  calification,
   category,
   words,
   create,
 }) => {
 
+  let { comentarios } = useSelector((state) => state.comentarios);
+    console.log(comentarios);
 
   const dispatch = useDispatch();
   const handleEntryClick = () => {
     dispatch( 
         activeNote( id, {
-            name, img, shortdescription, longdescription, calification, category,
+            name, img, shortdescription, longdescription, category,
             words,
             create
         })
     );
 }
 
+    // Return calification
+  comentarios = comentarios.filter(computers => computers.idComment === id);
+  let calificacion = 0;
 
+  for (let i = 0; i < comentarios.length; i++) {
+    calificacion = calificacion + comentarios[i].calificacion
+  }
+  if (calificacion !== 0){
+    calificacion = Math.round(calificacion / comentarios.length);
+  }
 
-  const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
-
-  
-  
+  let rowsCalification = [];
+  for (let i = 0; i < calificacion; i++) {
+    rowsCalification.push(
+      <img key={i} src={`/icons/star-filled.svg`} alt="" />
+    );
+  }
+  for (let i = calificacion; i < 5; i++) {
+    rowsCalification.push(
+      <img key={i} src={`/icons/star-empty.svg`} alt="" />
+    );
+  }
 
   return (
     <div className="col-md-3 col-sm-3 col-xs-12" 
@@ -61,13 +76,9 @@ export const PhonesCard = ({
                     <div class="cart-section">
                       <div class="row">
                         <div className="col-md-6 col-sm-12 col-xs-6">
-                            <ReactStars
-                              count={calification}
-                              onChange={ratingChanged}
-                              size={19}
-                              color={"#ffbf00"}
-                              edit={false}
-                            />
+                        <div>
+                            {rowsCalification}
+                            </div> 
                         </div>
                           <div class="col-md-6 col-sm-12 col-xs-6">
                           <Link to={`/detail-review-phones/${id}`}>
