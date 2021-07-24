@@ -247,13 +247,13 @@ export const Commentary = ({history}) => {
 				    	  <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="true">Reviews</a>
 				  	  </li>
 				  </ul>
-                {datas.map((data) => (
+                
+				<div class="tab-content" id="myTabContent">
+				  	{datas.map((data) => (
                 <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
 				  	{data.longdescription}
             </div>
                 ))}
-				<div class="tab-content" id="myTabContent">
-				  	
 				  	
               <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
 				  		
