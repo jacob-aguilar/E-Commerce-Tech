@@ -99,9 +99,9 @@ export const CarouselBootstrap = () => {
         getSlide6();
     }, []);
 
-    const ratingChanged = (newRating) => {
-        console.log(newRating);
-      };
+    // const ratingChanged = (newRating) => {
+    //     console.log(newRating);
+    //   };
 
 
     return (
@@ -139,13 +139,13 @@ export const CarouselBootstrap = () => {
                 <div class="cart-section">
                       <div class="row">
                         <div className="col-md-6 col-sm-12 col-xs-6">
-                            <ReactStars
+                            {/* <ReactStars
                               count={data.calification}
                               onChange={ratingChanged}
                               size={19}
                               color={"#ffbf00"}
                               edit={false}
-                            />
+                            /> */}
                         </div>
                           <div class="col-md-6 col-sm-12 col-xs-6">
                           <Link to={"/detail-review/PX9Ek2E6L9OOSTH3EsWa"}>
@@ -177,13 +177,13 @@ export const CarouselBootstrap = () => {
                 <div class="cart-section">
                       <div class="row">
                         <div className="col-md-6 col-sm-12 col-xs-6">
-                            <ReactStars
+                            {/* <ReactStars
                               count={data.calification}
                               onChange={ratingChanged}
                               size={19}
                               color={"#ffbf00"}
                               edit={false}
-                            />
+                            /> */}
                         </div>
                           <div class="col-md-6 col-sm-12 col-xs-6">
                           <Link to={"/detail-review-phones/xGUo6SaVtDS2KjnsSivU"}>
@@ -213,13 +213,13 @@ export const CarouselBootstrap = () => {
                 <div class="cart-section">
                       <div class="row">
                         <div className="col-md-6 col-sm-12 col-xs-6">
-                            <ReactStars
+                            {/* <ReactStars
                               count={data.calification}
                               onChange={ratingChanged}
                               size={19}
                               color={"#ffbf00"}
                               edit={false}
-                            />
+                            /> */}
                         </div>
                           <div class="col-md-6 col-sm-12 col-xs-6">
                           <Link to={"/detail-review/JeBEdbqkx3HouJPDn1lR"}>
@@ -249,13 +249,13 @@ export const CarouselBootstrap = () => {
                 <div class="cart-section">
                       <div class="row">
                         <div className="col-md-6 col-sm-12 col-xs-6">
-                            <ReactStars
+                            {/* <ReactStars
                               count={data.calification}
                               onChange={ratingChanged}
                               size={19}
                               color={"#ffbf00"}
                               edit={false}
-                            />
+                            /> */}
                         </div>
                           <div class="col-md-6 col-sm-12 col-xs-6">
                           <Link to={"/detail-review-phones/M841W1UWVGUVr8sGlwPy"}>
@@ -291,13 +291,13 @@ export const CarouselBootstrap = () => {
                 <div class="cart-section">
                       <div class="row">
                         <div className="col-md-6 col-sm-12 col-xs-6">
-                            <ReactStars
+                            {/* <ReactStars
                               count={data.calification}
                               onChange={ratingChanged}
                               size={19}
                               color={"#ffbf00"}
                               edit={false}
-                            />
+                            /> */}
                         </div>
                           <div class="col-md-6 col-sm-12 col-xs-6">
                           <Link to={"/detail-review-phones/XtVvdV2ku34K2V91jKQo"}>
@@ -328,13 +328,13 @@ export const CarouselBootstrap = () => {
                 <div class="cart-section">
                       <div class="row">
                         <div className="col-md-6 col-sm-12 col-xs-6">
-                            <ReactStars
+                            {/* <ReactStars
                               count={data.calification}
                               onChange={ratingChanged}
                               size={19}
                               color={"#ffbf00"}
                               edit={false}
-                            />
+                            /> */}
                         </div>
                           <div class="col-md-6 col-sm-12 col-xs-6">
                           <Link to={"/detail-review-phones/kE2L4NSkFWLbiMHrtA6S"}>
