@@ -88,6 +88,7 @@ export const Commentary = ({history}) => {
         comentario: formState.comentarValue,
         calificacion: calificacionValue
       }
+      getComment();
       dispatch( newComentario(newComent) );
       setFormState({
         comentarValue: ''

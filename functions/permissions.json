@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "appland-e-commerce",
+  "private_key_id": "a9ffd3c9a015b789dc360718c0207f07537a7bc9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC5SkAXIxYe4FdC\nfffQRwBBeOFpJddxjlrrbnYO1NR/gJyQUhRQHEu9M3CxqzfzppDj4KO9LCtqGc7U\n2VqAlI9GbM336MUq+Gm9KtHjVkjyG/AF1nSIdemyhB1KInwt8g6FHjjwP/kSVIW1\nBzz6e5QBkXiuoNy7Ag1AjotdEiz9gYpoYpqr4nJ/yK3YQANIYWfz8xIsbQNA/arP\nnUUNZ22m/vrlbEe3ySj/rPkt0i61u1gl+2d+UFZo5vYHhlfGoCuM77PnM2GpRzLh\nYdjOCXYLl7ONqoeHveo8ZdP7SH/pLkOApovHUY152Vs9046wnJtiStxBNB83B0Z1\nc6aGBUYxAgMBAAECggEATt4ndJG3LzJPghprOoiWN8gTrjVwxEGTOqX8c2itAI6G\nVbnSMp0wsdps6/sUqE2sW4q5N2LPIezVSG0x5AwYBiJ280BteFJfc6j/yNPn3cH9\ngwaa+KCz9gvdCbqu/8GJ46iPFNguFNrMRNdNYdLrF1XLuAz5l1ISwPlLobSEWOyp\n2YGtAVHyMN9gsXThpN5g0eu8XMh2Po3bxzToS9s3aoN9/5aiXfcKsfqmwTq07bMS\nKgmHPShVKwWFDl9LeQkB8kADstEbTIlUm4Y3ghZBoxUQtDaBG188+/T0Ac5JJFdZ\nQpRN43servQ0iG/UYbxUva26lzovkZZDyKKRi0CY5wKBgQDw89W3zN8xujEvvmrD\nIUm7c2Os4b543jtRpvoAUJMrPHroIz+4zw6JnXe3JnY+TvxfK8TfbduIX4wks98W\n1At1Mzrv77tNSHYRvdGrLv7tLLHa75H5EjiQtbM5TPrMT6PQFV9R7mHNWh/Q8sJW\nPfF1CDWutem+ODqdb0zSBNiYUwKBgQDE3IbXzbgJjzd+rjsR1pAq4vYOr+uxJSgq\nTMHVNK/HJtJi0Z9cE4Ebsk/T/eJWG4VwHRWRw0WETMEZtSXP4MSwvaeDpCuVL89a\nNBjtDYyozc254YEj9I1FWAq1mXuJf6XPvKDLee9ePX8PKHiIkD++6XraaxOMK80J\nppUn1/KG6wKBgGoOCS2jYUIT//5Rw9ArYLa/LUo0+o9c0aM46aUl0gEf18FBcpS3\nnmB4DO9yYG1Aetiw/TCSvCQkWhz1huYXYwutBu4BCOIVWNKqSBUe1Fo0Z/xDom6M\n1JTtRPudpG41R5cZMSFw2V93obVohJ1NGnA2sto5e66cNUCCcr+mHme9AoGASzpK\nfSUr8ts7xbkm8YYgyYK5rJslYihk1OVIHQVpNp1rQEACudjqOX9GaihW2bjioRk8\nKNuKMShzkjNbI7ks8K1I2lFeJkCC6GGINO48ljUvLJ00EF1fruQaE5N3Ve/lmSDo\nAVmzUzwE1fINPYKCGZ53SAgrDCGg1NNHpFYtY8kCgYBueL16HO7n1Hl+dapYdPmv\nRDUfTvktH+QkzqJbIzPzKa7yq3PevRjTh4IJe+/YuMuOeJL8DPM/uZbXHmrxnqrs\nYoVAiOB3PurB3bg6qfgLXbs0gong2OjHoNQb648Fd8egCwp1bpf19IvvNd81DvZG\nSrhVGUf3unvz0PE9/OGubQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-q3jl6@appland-e-commerce.iam.gserviceaccount.com",
+  "client_id": "112674941843770746509",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-q3jl6%40appland-e-commerce.iam.gserviceaccount.com"
+}
