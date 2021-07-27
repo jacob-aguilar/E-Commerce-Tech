@@ -14,6 +14,10 @@ import { login } from '../actions/auth';
 import { PrivateRoute } from './PrivateRoute';
 import {LoadingPage} from '../components/ui/LoadingPage'
 import { HomeScreen } from '../components/ui/HomeScreen';
+import { loadComputers } from '../helpers/loadComputers';
+import { setComputers } from '../actions/computers';
+import { loadComentarios } from "../helpers/loadComentarios"
+import { setComentarios } from "../actions/comentarios";
 
 export const AppRouter = () => {
 
@@ -32,6 +36,8 @@ export const AppRouter = () => {
               dispatch( login( user.uid, user.displayName ) );
               setIsLoggedIn( true );
               // dispatch( startLoadingNotes( user.uid ) );
+              dispatch( setComentarios(await loadComentarios()) );
+              dispatch( setComputers(await loadComputers() ) );
 
           } else {
               setIsLoggedIn( false );

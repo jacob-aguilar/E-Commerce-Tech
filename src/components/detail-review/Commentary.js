@@ -17,8 +17,8 @@ export const Commentary = ({history}) => {
   };
 
   const dispatch = useDispatch();
-  const { name } = useSelector(state => state.auth);
-  
+  const { name, uid } = useSelector(state => state.auth);
+  const { comentarios } = useSelector((state) => state.comentarios);
   console.log(name);
 
   const { id } = useParams();
@@ -52,6 +52,7 @@ export const Commentary = ({history}) => {
     
 
     e.preventDefault();
+     const count = comentarios.filter(comment => comment.idComment === id && comment?.uidUser === uid).length;
     if (!name) {
       Swal.fire({
         icon: 'error',
@@ -62,7 +63,7 @@ export const Commentary = ({history}) => {
       });
        history.push('/auth/login');
       
-    }else if (formState.comentarValue.trim().length > 3) {
+    }else if (formState.comentarValue.trim().length > 0 && count === 0) {
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -73,6 +74,7 @@ export const Commentary = ({history}) => {
       let newComent = {
         idComment: id,
         name: name,
+        uidUser: uid,
         date: new Date().getTime(),
         comentario: formState.comentarValue,
         calificacion: calificacionValue
@@ -84,6 +86,7 @@ export const Commentary = ({history}) => {
         id: doc.id,
         idComment: id,
         name: name,
+        uidUser: uid,
         date: new Date().getTime(),
         comentario: formState.comentarValue,
         calificacion: calificacionValue
@@ -98,19 +101,7 @@ export const Commentary = ({history}) => {
         icon: 'info',
         timer: 1500,
         showConfirmButton: false,
-        title: 'Tienes que añadir más de una palabra',
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        }
-      })
-    }
-    if (formState.comentarValue.trim().length === 200) {
-      Swal.fire({
-        icon: 'info',
-        title: 'No se permiten más caracteres',
+        title: 'Ya no puedes valorar este producto',
         showClass: {
           popup: 'animate__animated animate__fadeInDown'
         },
